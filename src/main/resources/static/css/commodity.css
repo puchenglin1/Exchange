@@ -1,0 +1,49 @@
+.div1{
+    background-image: url("/img/commodity/2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    height: 5rem;
+}
+.div2{
+    position: absolute;
+    max-width: 512px;
+    top:4rem;
+    width: 100%;
+    height: 4rem;
+    border-bottom: .05rem solid #ebebeb;
+}
+.logoArea{
+    float: left;
+    width: 32%;
+    height: 4rem;
+    margin-top: 0;
+}
+.div3{
+    background-image: url("/img/commodity/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    margin-left:1.5rem;
+    height: 3.5rem;
+    width:3.5rem;
+}
+.div4{
+    float:right;
+    width: 68%;
+    height: 4rem;
+    margin-top: 0;
+}
+.td1{
+    font-size: 12px;
+    color:#999;
+    cursor:pointer;
+
+}
+.td2{
+    font-size: 18px;
+    font-family:SimHei;
+}
+
+.p1{position: relative;display: inline-block;}
+.p1:before{width:7px;height:30px;background:#ebebeb;position: absolute;top:-13px;content: "";border: 3px solid #fff;}

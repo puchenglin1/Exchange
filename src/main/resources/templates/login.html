@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" style="font-size: 32px;">
+<head>
+    <title>会员登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="layoutmode" content="standard"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="wap-font-scale" content="no"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/base.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/2052.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jqmobi.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jqmobi_ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/mobi.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/hawkEye.min.js}"></script>
+   <!-- <link rel="stylesheet" th:href="@{/css/matrix-login.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />-->
+    <!--<link th:href='@{http://fonts.googleapis.com/css?family=Open+Sans:400,700,800}' rel='stylesheet' type='text/css'/>-->
+</head>
+<body id="g_body">
+    <div id="g_web" class="g_web">
+        <div class="mallThemeTopBar">
+            <div class="logoTitleSide">
+                <div class="logoArea">
+                    <span class="pageLogo" id="pageLogoMall" sid="0" pw="164" ph="164">
+                        <a alt="" href="/" hidefocus="true">
+                            <div id="pageLogoImgMall" class="logoImg"></div>
+                        </a>
+                    </span>
+                </div>
+                <div class="titleArea">
+                    <h1 style="font-weight:normal; font-size: inherit; display: inline-block;">
+                        <a alt="" href="/" hidefocus="true">
+                            <span class="pageTitle" id="pageTitleMall">昆明蜜儿烘焙</span>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="toolMenuSide">
+                <div class="userEnterAera">
+                    <a href="profile.jsp" hidefocus="true" class="userEnterLink">
+                        <span class="userEnterIcon icon-userEnterIcon"></span>
+                        <span class="userEnterText">会员中心</span>
+                    </a>
+                </div>
+               <!-- <div class="seacherAera" onclick="Mobi.popupSearch({lanCode:&quot; &quot;,nSL:&quot;[]&quot;,
+                 hotTopic:[], searchProduct:1, searchTip:&quot;&quot;, moduleType:0, moduleColor:&quot;#aaa&quot;,
+                  historySearch:1})">
+                    <span class="seacherBtnIcon icon-seacherBtnIcon">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </span>
+                    <span class="seacherAeraText">搜索</span>
+                </div>-->
+            </div>
+        </div>
+        <div id="webContainerBox" class="webContainerBox" style="overflow:visible;">
+            <div id="webModuleContainer" class="webModuleContainer" style="overflow: hidden;">
+                <div class="loginContent">
+                    <div class="g_globalLine forAcctLogin">
+                        <input maxlength="50" id="user" class="itemEdit g_input mustItem fk-inputFontColor" placeholder="请输入帐号" type="text">
+                        <span class="icon-userIcon g_mainColor"></span>
+                    </div>
+                    <div class="g_globalLine forAcctLogin">
+                        <input maxlength="20" id="password" class="itemEdit g_input  mustItem fk-inputFontColor" placeholder="请输入密码" type="password">
+                        <span class="icon-pswIcon g_mainColor"></span>
+                    </div>
+                    <div class="g_globalLine forAcctLogin">
+                        <input class=" g_button sendIcon" onclick="Mobi.memberLogin(&quot; http://m.im14161367.icoc.me/profile.jsp&quot;)" value="登录" type="button">
+                    </div>
+                    <div class="loginBottom g_globalLine">
+                        <a class="g_mainColor freeRegister" href="anon/toRegist">免费注册</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--<div id="loginbox">&lt;!&ndash;/*@thymesVar id="msg" type="java.lang.String"*/&ndash;&gt;
+<span th:text="${msg}"></span>
+    <form id="loginform" class="form-vertical" th:action="@{/login}" action="" method="post">
+        <div class="control-group normal_text"> <h3><img th:src="@{img/logo.png}" alt="Logo" /></h3></div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="main_input_box">
+                    <span class="add-on bg_lg"><i class="icon-user"></i></span><input type="text" name="username" placeholder="Username" />
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="main_input_box">
+                    <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="password" placeholder="Password" />
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
+            <span class="pull-right"><a type="submit" href="javascript:$('#loginform').submit();" class="btn btn-success">Login</a></span>
+        </div>
+    </form>
+    <form id="recoverform" action="#" class="form-vertical">
+        <p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a password.</p>
+
+        <div class="controls">
+            <div class="main_input_box">
+                <span class="add-on bg_lo"><i class="icon-envelope"></i></span><input type="text" placeholder="E-mail address" />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
+            <span class="pull-right"><a class="btn btn-info">Reecover</a></span>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" th:src="@{/js/jquery-1.11.2.min.js}"></script>-->
+</body>
+</html>

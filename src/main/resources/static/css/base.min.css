@@ -1,0 +1,237 @@
+@charset "utf-8";
+* {
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    -webkit-touch-callout:none;
+    margin:0
+}
+html {
+    height:100%;
+}
+body {
+    background: #fbfbfb;
+    font-family: "华文细黑","Myriad Pro","微软雅黑";
+}
+#g_body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #000;
+    font-size: .7rem;
+    font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+    height: 100%;
+}
+.g_web {
+    margin: 0 auto;
+    max-width: 512px;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+}
+a {
+    color: #000;
+    padding: 0;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+}
+.webContainerBox{
+    height: 100%;
+    background: #f7f7f7;
+    background-color: #f7f7f7;
+    border-bottom: 0;
+    border-top: 0;
+}
+.loginContent {
+    padding: .75rem .5rem .75rem .5rem;
+    color: #666;
+}
+.g_globalLine {
+    position: relative;
+    width: 100%;
+    color: #666;
+}
+.g_input {
+    padding: .75rem;
+    height: 2.5rem;
+    line-height: 1.1rem;
+    font-size: .7rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+    width: 100%;
+    color: #999;
+    font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: none;
+    outline: 0;
+    z-index: 1;
+}
+.itemEdit {
+    padding-left: 3.5rem;
+}
+.icon-userIcon::before {
+    content: '帐号';
+}
+
+.icon-userIcon::before , .icon-pswIcon::before{
+    color: #d2d2d2;
+    font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+    font-size: .7rem;
+    position: absolute;
+    left: .75rem;
+    color: #333;
+    z-index: 3;
+    display: inline-block;
+    max-width: 2.8rem;
+    height: 1rem;
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+    content: '帐号';
+    top: .7rem;
+}
+input, textarea {
+    -webkit-user-select: text;
+}
+
+.fk-inputFontColor {
+
+}
+.g_button {
+    background-repeat: no-repeat;
+    border: 0;
+    color: white;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .8rem;
+    font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+    text-align: center;
+    margin: .5rem auto;
+    padding: 0;
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    outline: 0;
+}
+.signUpContent .signupSubmit, .loginContent .sendIcon {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: .85rem;
+}
+.loginContent .loginBottom .freeRegister {
+    font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+    color: #666;
+}
+.loginContent .loginBottom {
+    text-align: right;
+    margin-top: .4rem;
+}
+.icon-pswIcon::before {
+    content: '密码';
+}
+.searchWindow {
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    height: 100%;
+    z-index: 999;
+    -webkit-animation: popupSearchWindow .25s both;
+    -moz-animation: popupSearchWindow .25s both;
+    -o-animation: popupSearchWindow .25s both;
+    -ms-animation: popupSearchWindow .25s both;
+    animation: popupSearchWindow .25s both;
+}
+.searchWindow {
+    max-width: 512px;
+}
+.searchInputBar {
+    border-bottom: 1px solid #ddd;
+    padding: .5rem 0;
+    text-align: left;
+    position: relative;
+}
+.icon-closeSearch::before {
+    font-size: 1.75rem;
+    color: #a9aaac;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
+}
+.icon-closeSearch {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.75rem;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.popupSearchWrap {
+    display: inline-block;
+    width: 13.5rem;
+    height: 1.6rem;
+    position: relative;
+    border: solid 1px #bfbfbf;
+    border-radius: 2px;
+}
+.popupSearchInput {
+    font-size: .6rem;
+    height: 1.6rem;
+    width: 100%;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    padding-left: .5rem;
+    -webkit-appearance: none;
+    outline: 0;
+    font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+}
+
+.icon-popupSearchBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    text-align: center;
+    color: #666;
+}
+
+.popupSearchWrap0 .icon-popupSearchIcon {
+    display: none;
+}
+.icon-popupSearchIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    text-align: center;
+    color: #bfbfbf;
+}
