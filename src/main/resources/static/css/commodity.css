@@ -45,5 +45,6 @@
     font-family:SimHei;
 }
 
-.p1{position: relative;display: inline-block;}
-.p1:before{width:7px;height:30px;background:#ebebeb;position: absolute;top:-13px;content: "";border: 3px solid #fff;}
+.div5{position: relative;display: inline-block;}
+.div5:before{width:7px;height:30px;background:#ebebeb;position: absolute;top:-13px;content: "";border: 3px solid #fff;}
+.img1{width:0.8rem;height:0.8rem;}
