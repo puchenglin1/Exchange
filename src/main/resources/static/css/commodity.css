@@ -48,3 +48,40 @@
 .div5{position: relative;display: inline-block;}
 .div5:before{width:7px;height:30px;background:#ebebeb;position: absolute;top:-13px;content: "";border: 3px solid #fff;}
 .img1{width:0.8rem;height:0.8rem;}
+.div6{
+    overflow:visible;
+    padding: .2rem 0rem;
+    margin: 0 auto;
+    position:relative;
+    display: block;
+    top:94px;
+    z-index:0;
+}
+.div7{
+    background: #fff;
+    width:32%;
+    min-height: 5.2rem;
+    float:none;
+    display:inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.img2{width:3rem;height:3rem;}
+.div8{
+    font-size: .7rem;
+}
+.div9{
+    background-color: #fcc601;
+    top:94px;
+    z-index:0;
+    overflow:visible;
+    position:relative;
+    display: block;
+    height: 4rem;
+}
+.p1{
+    text-align: center;
+    color:#FFFFFF;
+    font-family: 微软雅黑;
+    font-size: .6rem;
+}
