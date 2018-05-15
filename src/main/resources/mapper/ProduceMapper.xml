@@ -2,6 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pucl.exchange.mapper.ProduceMapper">
     <select id="getProduceList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
-        select * from produce a LEFT JOIN produce_img b on a.id=b.produce_id where a.type=#{type} and b.is_title=1
+        select * from produce a LEFT JOIN produce_img b on a.id=b.produce_id where a.type=#{type} and b.is_title=1 limit 1
     </select>
 </mapper>
