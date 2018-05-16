@@ -17,6 +17,6 @@ public class ProduceController {
     @RequestMapping("getProduceList/{type}/{sort}")
     public String getProduceList(@PathVariable("type") int type,@PathVariable("sort") String sort){
 
-        return "commodity/produeList";
+        return "commodity/produelist";
     }
 }
