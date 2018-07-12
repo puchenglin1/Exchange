@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="page">
+    <script th:inline="javascript">
+        var pageNum = [[${pageInfo.pageNum}]];
+        var pageSize=[[${pageInfo.pageSize}]];
+        var total=[[${pageInfo.total}]];
+        var pages=[[${pageInfo.pages}]];
+        $(document).ready(function(){
+            if(pageNum==1){
+                $('#previous').attr("disabled",true);
+                $('#previous').attr("class","p_btn dis");
+            }else{
+                $('#previous').attr("disabled",false);
+                $('#previous').attr("class","p_btn endis");
+            }
+            if(pageNum==pages){
+                $('#next').attr("disabled",true);
+                $('#next').attr("class","p_btn dis");
+            }else{
+                $('#next').attr("disabled",false);
+                $('#next').attr("class","p_btn endis");
+            }
+        });
+
+        function Paging(type){
+            if(type==1){
+                pageNum=pageNum-1;
+            }else{
+                pageNum=pageNum+1;
+            }
+            var url="getProduceList?start="+pageNum;
+            window.location.href=url;
+        }
+    </script>
+
+    <table class="p_t1">
+        <tr>
+            <td align="center" width="30%">
+                <button id="previous"   onclick="Paging('1');">上一页</button>
+            </td>
+            <td align="center">
+                <span th:text="${pageInfo.pageNum}"></span>&nbsp;&nbsp;/&nbsp;&nbsp;<span th:text="${pageInfo.pages}"></span>
+            </td>
+            <td align="center" width="30%">
+                <button id="next"  onclick="Paging('2');">下一页</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

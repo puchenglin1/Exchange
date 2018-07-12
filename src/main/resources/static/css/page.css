@@ -1,0 +1,23 @@
+@charset "utf-8";
+.p_t1{
+    width: 100%;
+    height: 3rem;
+}
+.p_btn{
+    height:1.1rem;
+    width: 3rem;
+    border-radius: 0.1rem;
+    background-size: 100%;
+    background-color: #F5F5F5;
+    font-size: 0.5rem;
+}
+
+.dis{
+    border:1px solid #FDE27F;
+    color:#FDE27F;
+}
+
+.endis{
+    border:1px solid #FCC600;
+    color:#FCC600;
+}

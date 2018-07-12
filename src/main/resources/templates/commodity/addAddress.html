@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" style="font-size: 32px;">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="layoutmode" content="standard"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="wap-font-scale" content="no"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+
+    <link rel="stylesheet" th:href="@{/AmazeUI/css/amazeui.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/base.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/produce.css}" />
+    <link rel="stylesheet" th:href="@{/css/alert.css}" />
+
+
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/AmazeUI/js/amazeui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/alert.js}"></script>
+    <script th:inline="javascript">
+        function goBack(produceId) {
+            var url="getProduceDetail?produceId="+produceId;
+            window.location.href=url;
+        }
+
+        function addAddress(){
+            var receiving_name=jQuery('#receiving_name').val();
+            var receiving_phone=jQuery('#receiving_phone').val();
+            var receiving_address=jQuery('#receiving_address').val();
+            if(receiving_name==''){
+                fail_prompt('请填写收款人姓名',2000);
+            }
+
+        }
+    </script>
+
+
+</head>
+<body id="g_body">
+    <div class="g_web">
+        <div class="div10">
+            <span class="span1">< </span><font size="3rem" color="white" style="margin-left: 3.5rem">新增收货地址</font>
+        </div>
+        <div style="background-color: white;">
+            <div style="border-bottom:0.05rem solid #EDEDED;font-size: 0.4rem;height: 1.5rem;line-height:1.5rem;">
+                &nbsp;&nbsp;收货人&nbsp;&nbsp;<input id="receiving_name" type="text" style="border: 0px;width:8rem; height:1.1rem ;outline:none;vertical-align：top;"/>
+            </div>
+            <div style="border-bottom:0.05rem solid #EDEDED;font-size: 0.4rem;height: 1.5rem;line-height:1.5rem; ">
+                &nbsp;&nbsp;联系电话&nbsp;&nbsp;<input id="receiving_phone" type="text" style="border: 0px;width:8rem; height:1.1rem ;outline:none;"/>
+            </div>
+            <div style="font-size: 0.4rem;height: 2rem;line-height:1.1rem; ">
+                &nbsp;&nbsp;详细地址&nbsp;&nbsp;<textarea id="receiving_address" placeholder="请输入详细地址信息，如区、道路、门牌号、小区、楼栋号、单元室等" style="border: 0px;width:8rem; height:1.8rem ;outline:none;line-height: 0.5rem;"></textarea>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="btn2" onclick="addAddress();">保存</button>
+        </div>
+        <div id="alert"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="dataList">
+            <table width="100%">
+                <tr th:each="data:${dataList}"  class="tr1" style="cursor:pointer;">
+                   <td th:class="td4" th:onclick="'javascript:toProduceDetail('+${data.id}+')'">
+                       <img th:src="@{${data.url}}" class="img1"/>
+                   </td>
+                    <td width="60%">
+                        <div th:text="${data.name}"></div>
+                        <div th:text="'￥'+${data.price}" class="div1"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

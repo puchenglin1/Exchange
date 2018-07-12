@@ -1,5 +1,5 @@
 @charset "utf-8";
-.d1 {
+.topBar {
     position: relative;
     height: 1.5rem;
     background: #fcc600;
@@ -8,22 +8,15 @@
     font-family: "微软雅黑";
     color:#fff;
 }
-.d2{
-    width:50%;
-    height: 100%;
-}
-.d3{
+.logo{
     background-image:url("/css/img/logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: transparent;
     height: 1.1rem;
     width:1.1rem;
-    margin-top: .2rem;
-    margin-left: .2rem;
-    display:inline-block;
+    margin-left: .3rem;
 }
-.d4{
-    margin-top:8rem;
-    display:inline;
+.title{
+    margin-top: .3rem;
 }

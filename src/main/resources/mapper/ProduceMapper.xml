@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pucl.exchange.mapper.ProduceMapper">
+
     <select id="getProduceList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
-        select * from produce a LEFT JOIN produce_img b on a.id=b.produce_id where a.type=#{type} and b.is_title=1 limit 1
+        select * from produce a LEFT JOIN produce_img b on a.id=b.produce_id where a.type=#{type} and b.is_title=1
+    </select>
+
+    <select id="getProduceDetailImg" parameterType="java.lang.String" resultType="java.util.Map">
+        select * from produce_detail where produce_id=#{produceId} ORDER BY sort_id
+    </select>
+    
+    <select id="getProduceImg" parameterType="java.lang.String" resultType="java.util.Map">
+        select * from produce_img where produce_id=#{produceId} ORDER BY is_title desc
+    </select>
+    
+    <select id="getProduceModel" parameterType="java.lang.String" resultType="java.util.Map">
+        select * from produce_model where produce_id=#{produceId} ORDER BY sort_id
+    </select>
+
+    <select id="getProduceDetail" parameterType="java.lang.String" resultType="java.util.Map">
+        select a.*,max(b.price) as maxPrice,min(b.price) as minPrice from produce a left join produce_model b on a.id=b.produce_id where a.id=#{produceId}
+    </select>
+    <select id="getProduceOrder" parameterType="java.util.Map" resultType="java.util.Map">
+        SELECT
+            a.id AS produce_id,
+            a.`name`,
+            b.price,
+            b.`desc`,
+            b.id AS model_id
+        FROM
+            produce a
+        LEFT JOIN produce_model b ON a.id = b.produce_id
+        WHERE
+            a.id = #{produceId}
+        AND b.id = #{modelId}
+    </select>
+    <select id="getDefaultAddress" parameterType="java.lang.String" resultType="java.util.Map">
+        select * from user_address where `status`=1 and phone=#{phone} and is_default=1
+    </select>
+    <select id="getUserAddress" parameterType="java.lang.String" resultType="java.util.Map">
+        select * from user_address where `status`=1 and phone=#{phone} ORDER BY is_default desc
     </select>
 </mapper>

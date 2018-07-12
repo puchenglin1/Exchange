@@ -18,19 +18,40 @@
     <link rel="stylesheet" th:href="@{/css/base.min.css}" />
     <link rel="stylesheet" th:href="@{/css/produce.css}" />
     <link rel="stylesheet" th:href="@{/css/topBar.css}" />
+    <link rel="stylesheet" th:href="@{/css/page.css}" />
 
     <script type="text/javascript" th:src="@{/js/jquery-1.11.2.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/page.js}"></script>
+    <script th:inline="javascript">
+        function toProduceDetail(produceId){
+            var url="getProduceDetail?produceId="+produceId;
+            window.location.href=url;
+        }
+    </script>
 
 </head>
 <body id="g_body">
     <div class="g_web">
-        <div class="d1">
-            <div class="d2">
-                <div class="d3"></div>
-                <div class="d4">昆明蜜儿烘焙</div>
-            </div>
-        </div>
+        <div th:replace="topBar :: topBar"></div>
+
+
+        <table width="100%" style="height: 3rem;">
+            <tr>
+                <td class="td2">休闲食品</td>
+                <td width="70%" class="td1"></td>
+            </tr>
+        </table>
+        <table width="100%" style="height: 2rem;">
+            <tr class="tr1">
+                <td class="td3">默认</td>
+                <td class="td3">销量</td>
+                <td class="td3">名称</td>
+                <td class="td3">价格</td>
+            </tr>
+        </table>
+        <div th:id="dataList" th:include="commodity/producelist-data::dataList" ></div>
+        <div th:include="page :: page"></div>
     </div>
 </body>
 </html>
