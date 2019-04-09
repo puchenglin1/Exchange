@@ -50,8 +50,9 @@ public class UserController {
      */
     @RequestMapping("/saveUserRoles")
     public String saveUserRoles(UserRole userRole){
-        if(StringUtils.isEmpty(userRole.getUserid()))
+        if(StringUtils.isEmpty(userRole.getUserid())){
             return "error";
+        }
         try {
             userRoleService.addUserRole(userRole);
             return "success";
@@ -64,8 +65,9 @@ public class UserController {
     @RequestMapping(value = "/add")
     public String add(User user) {
         User u = userService.selectByUsername(user.getUsername());
-        if(u != null)
+        if(u != null) {
             return "error";
+        }
         try {
             user.setEnable(1);
             PasswordHelper passwordHelper = new PasswordHelper();

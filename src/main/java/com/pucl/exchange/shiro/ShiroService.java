@@ -21,8 +21,7 @@ public class ShiroService {
     private ShiroFilterFactoryBean shiroFilterFactoryBean;
     @Autowired
     private ResourcesService resourcesService;
-    @Autowired
-    private RedisSessionDAO redisSessionDAO;
+
     /**
      * 初始化权限
      */
@@ -37,6 +36,7 @@ public class ShiroService {
         filterChainDefinitionMap.put("/produce/**", "anon");
         filterChainDefinitionMap.put("/AmazeUI/**","anon");
         filterChainDefinitionMap.put("/font-awesome/**","anon");
+        filterChainDefinitionMap.put("*","anon");
         List<Resources> resourcesList = resourcesService.queryAll();
         for(Resources resources:resourcesList){
 

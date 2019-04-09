@@ -112,4 +112,14 @@ public class ProduceController {
         return "commodity/addAddress";
     }
 
+
+    @RequestMapping("/addAddress")
+    public String addAddress(HttpServletRequest request,
+                             @RequestParam(required = false) String produceId,
+                             @RequestParam(required = false) String modelId,
+                             @RequestParam(required = false) String produceNum){
+
+        return "";
+    }
+
 }

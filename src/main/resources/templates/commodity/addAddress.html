@@ -26,9 +26,10 @@
     <script type="text/javascript" th:src="@{/AmazeUI/js/amazeui.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/alert.js}"></script>
     <script th:inline="javascript">
-        function goBack(produceId) {
-            var url="getProduceDetail?produceId="+produceId;
-            window.location.href=url;
+        function goBack() {
+            //var url="getProduceDetail?produceId="+produceId;
+            //window.location.href=url;
+            window.history.back(-1);
         }
 
         function addAddress(){
@@ -47,7 +48,7 @@
 <body id="g_body">
     <div class="g_web">
         <div class="div10">
-            <span class="span1">< </span><font size="3rem" color="white" style="margin-left: 3.5rem">新增收货地址</font>
+            <span class="span1" th:onclick="'javascript:goBack()'">< </span><font size="3rem" color="white" style="margin-left: 3.5rem">新增收货地址</font>
         </div>
         <div style="background-color: white;">
             <div style="border-bottom:0.05rem solid #EDEDED;font-size: 0.4rem;height: 1.5rem;line-height:1.5rem;">
