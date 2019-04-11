@@ -38,8 +38,16 @@
             var receiving_address=jQuery('#receiving_address').val();
             if(receiving_name==''){
                 fail_prompt('请填写收款人姓名',2000);
+                return;
             }
-
+            var data = {};
+            data.receivingPhone = receiving_phone;
+            data.receivingName = receiving_name;
+            data.receivingAddress = receiving_address;
+            data.isDefault = 1;
+            $.post("/produce/addAddress", data, function (data) {
+                alert("SpringMVC自动装箱---后台返回来的参数：" + data);
+            });
         }
     </script>
 

@@ -1,6 +1,7 @@
 package com.pucl.exchange.mapper;
 
 import com.pucl.exchange.model.Produce;
+import com.pucl.exchange.model.UserAddress;
 import com.pucl.exchange.util.MyMapper;
 
 import java.util.List;
@@ -61,4 +62,10 @@ public interface ProduceMapper extends MyMapper<Produce> {
      * @return
      */
     public List<Map<String,Object>> getUserAddress(String phone);
+
+    /**
+     *新增收获地址
+     * @return
+     */
+    public int addAddress(UserAddress userAddress);
 }

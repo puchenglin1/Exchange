@@ -3,9 +3,12 @@ package com.pucl.exchange.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.pucl.exchange.mapper.ProduceMapper;
+import com.pucl.exchange.model.Message;
 import com.pucl.exchange.model.Produce;
 import com.pucl.exchange.model.Resources;
+import com.pucl.exchange.model.UserAddress;
 import com.pucl.exchange.service.ProduecService;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,6 +17,7 @@ import java.util.Map;
 
 @Service("produceServie")
 public class ProduceServieImpl implements ProduecService {
+    Logger log=Logger.getLogger(ProduceServieImpl.class);
 
     @Resource
     ProduceMapper produceMapper;
@@ -67,5 +71,24 @@ public class ProduceServieImpl implements ProduecService {
     public List<Map<String, Object>> getUserAddress(String phone) {
         List<Map<String,Object>> dataList=produceMapper.getUserAddress(phone);
         return dataList;
+    }
+
+    @Override
+    public Message addAddress(UserAddress userAddress) {
+        Message message=new Message();
+        try{
+            if(produceMapper.addAddress(userAddress)==0){
+                message.setMessage("新增失败");
+                message.setSuccess("0");
+            }else{
+                message.setMessage("新增成功");
+                message.setSuccess("1");
+            }
+        }catch (Exception e){
+            log.error(e);
+            message.setMessage("系统异常，新增失败");
+            message.setSuccess("0");
+        }
+        return message;
     }
 }

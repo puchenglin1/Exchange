@@ -1,11 +1,11 @@
 package com.pucl.exchange.controller.commodity;
 
 import com.github.pagehelper.PageInfo;
+import com.pucl.exchange.model.Message;
+import com.pucl.exchange.model.UserAddress;
 import com.pucl.exchange.service.ProduecService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -113,13 +113,11 @@ public class ProduceController {
     }
 
 
-    @RequestMapping("/addAddress")
-    public String addAddress(HttpServletRequest request,
-                             @RequestParam(required = false) String produceId,
-                             @RequestParam(required = false) String modelId,
-                             @RequestParam(required = false) String produceNum){
-
-        return "";
+    @RequestMapping(value = "/addAddress",method = RequestMethod.POST)
+    @ResponseBody
+    public Message addAddress(UserAddress userAdress,HttpServletRequest request){
+        Message message=produceService.addAddress(userAdress);
+        return message;
     }
 
 }

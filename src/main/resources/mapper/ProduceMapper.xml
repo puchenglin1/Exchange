@@ -41,4 +41,23 @@
     <select id="getUserAddress" parameterType="java.lang.String" resultType="java.util.Map">
         select * from user_address where `status`=1 and phone=#{phone} ORDER BY is_default desc
     </select>
+    <insert id="addAddress" parameterType="com.pucl.exchange.model.UserAddress">
+        insert user_address (
+                            user_id,
+                            receiving_phone,
+                            receiving_name,
+                            receiving_address,
+                            status,
+                            create_time,
+                            update_time,
+                            is_default
+                            )values (#{userId},
+                            #{receivingPhone},
+                            #{receivingName},
+                            #{receivingAddress},
+                            #{status},
+                            NOW(),
+                            NOW(),
+                            #{isDefault})
+    </insert>
 </mapper>

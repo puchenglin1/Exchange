@@ -1,7 +1,8 @@
 package com.pucl.exchange.service;
 
 import com.github.pagehelper.PageInfo;
-import com.pucl.exchange.model.Produce;
+import com.pucl.exchange.model.Message;
+import com.pucl.exchange.model.UserAddress;
 
 import java.util.List;
 import java.util.Map;
@@ -60,4 +61,11 @@ public interface ProduecService  {
      * @return
      */
     public List<Map<String,Object>> getUserAddress(String phone);
+
+    /**
+     * 增加收获地址
+     * @param userAddress
+     * @return
+     */
+    public Message addAddress(UserAddress userAddress);
 }
